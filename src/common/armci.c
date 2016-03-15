@@ -1016,3 +1016,14 @@ int dassertp_fail(const char *cond_string, const char *file,
   }
   return code;
 }
+
+
+/* Defines wrapper functions for macro definition.
+ * Thus exteral application can link to different impelementation
+ * of those functions without compiling. */
+
+/* Wrapper function of ARMCI_INIT_HANDLE macro. */
+void  ARMCI_INIT_HANDLE(armci_hdl_t *hdl)
+{
+	MACRO_ARMCI_INIT_HANDLE(hdl);
+}

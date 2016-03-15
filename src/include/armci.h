@@ -374,8 +374,9 @@ extern void ARMCI_SET_AGGREGATE_HANDLE(armci_hdl_t* nb_handle);
 
 extern void ARMCI_UNSET_AGGREGATE_HANDLE(armci_hdl_t* nb_handle);
 
-#define ARMCI_INIT_HANDLE(hdl) do {((double *)((hdl)->data))[0]=0; \
+#define MACRO_ARMCI_INIT_HANDLE(hdl) do {((double *)((hdl)->data))[0]=0; \
   ((double *)((hdl)->data))[1]=0; }while(0)
+extern void  ARMCI_INIT_HANDLE(armci_hdl_t *hdl);
 
 /* -------------- ARMCI Non-collective memory allocator ------------- */
 typedef struct armci_meminfo_ds {
